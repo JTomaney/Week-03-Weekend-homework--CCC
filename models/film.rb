@@ -18,4 +18,11 @@ class Film
     @id = result[0]["id"]
   end
 
+  def self.all_films()
+    sql = "SELECT films.* FROM films;"
+    film_list = SqlRunner.run(sql)
+    film_objects = film_list.map { |film| Film.new(film) }
+    return film_objects
+  end
+
 end

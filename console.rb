@@ -12,9 +12,5 @@ customer1.save()
 ticket1 = Ticket.new({"film_id" => film1.id, "customer_id" => customer1.id})
 ticket1.save()
 
-
-
-
-
 binding.pry
 nil
