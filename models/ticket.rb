@@ -24,4 +24,9 @@ class Ticket
     return ticket_objects
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM tickets;"
+    SqlRunner.run(sql)
+  end
+
 end
