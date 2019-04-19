@@ -37,6 +37,11 @@ class Film
     return customer_objects
   end
 
+  def total_customers()
+    customer_objects = self.customers()
+    return customer_objects.length()
+  end
+
   def self.all_films()
     sql = "SELECT films.* FROM films;"
     film_list = SqlRunner.run(sql)
