@@ -37,6 +37,11 @@ class Customer
     return film_objects
   end
 
+  def total_tickets()
+    film_objects = self.films()
+    return film_objects.length()
+  end
+
   def purchase_ticket(film)
     @funds -= film.price()
     ticket = Ticket.new({"film_id" => film.id, "customer_id" => @id})
