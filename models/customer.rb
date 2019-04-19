@@ -37,6 +37,12 @@ class Customer
     return film_objects
   end
 
+  def purchase_ticket(film)
+    @funds -= film.price()
+    ticket = Ticket.new({"film_id" => film.id, "customer_id" => @id})
+    ticket.save()
+  end
+
   def self.all_customers()
     sql = "SELECT customers.* FROM customers;"
     customer_list = SqlRunner.run(sql)
